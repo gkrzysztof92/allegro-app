@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft">
+
+    <EditText
+        android:id="@+id/delivery_firstItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Pierwsza sztuka (zl)"
+        android:inputType="number|numberDecimal"
+        />
+
+    <EditText
+        android:id="@+id/delivery_nextItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Kolejna sztuka (zl)"
+        android:inputType="number|numberDecimal" />
+
+    <EditText
+        android:id="@+id/delivery_qtyInPackage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Liczba w paczce"
+        android:inputType="number|numberSigned" />
+
+</LinearLayout>

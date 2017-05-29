@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_state_array">
+        <item>Nowy</item>
+        <item>Używany</item>
+    </string-array>
+</resources>

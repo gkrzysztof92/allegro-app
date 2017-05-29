@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_actions_group"
+        android:title="Akcje">
+        <menu>
+            <!--<item
+                android:id="@+id/item_auction"
+                android:checkable="true"
+                android:title="Wystaw Aukcje" /> -->
+            <item
+                android:id="@+id/item_my_auction"
+                android:checkable="true"
+                android:title="Moje Aukcje" />
+            <item
+                android:id="@+id/item_my_items"
+                android:checkable="true"
+                android:title="Moje Przedmioty" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/item_options_group"
+        android:title="Ustawienia">
+        <menu>
+            <!--<item
+                android:id="@+id/item_userOptions"
+                android:checkable="true"
+                android:title="Dane Konta Alegro" />
+            <item
+                android:id="@+id/item_payOptions"
+                android:checkable="true"
+                android:title="Platnosci" /> -->
+            <item
+                android:id="@+id/item_address"
+                android:checkable="true"
+                android:title="Dane Adresowe" />
+            <item
+                android:id="@+id/item_delivery"
+                android:checkable="true"
+                android:title="Wysylka" />
+
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,28 @@
+    <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <group android:id="@+id/myItemsMenuGroup">
+
+            <item
+                android:id="@+id/myItemsMenu_edit"
+                android:icon="@drawable/pencil"
+                android:title="Edytuj"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/myItemsMenu_remove"
+                android:icon="@drawable/trash"
+                android:title="Usun"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/myItemsMenu_auction"
+                android:icon="@drawable/currency_usd"
+                android:title="Aukcja"
+                app:showAsAction="always" />
+
+        </group>
+
+
+
+    </menu>

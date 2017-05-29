@@ -1,0 +1,49 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gacek.krzysztof.allegroapp.fragment.AddressSettingsFragment">
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <!--- User Data -->
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Dane Konta Allegro"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+        <FrameLayout
+            android:id="@+id/userData_accountData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+        </FrameLayout>
+
+        <!--- Address Data -->
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="Dane Adresowe"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+        <FrameLayout
+            android:id="@+id/userData_addressData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+        </FrameLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</ScrollView>

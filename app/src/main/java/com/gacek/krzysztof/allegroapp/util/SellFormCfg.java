@@ -14,6 +14,7 @@ public enum SellFormCfg {
     AUCTION_TYPE_FIELD(29, Forms.FormType.INTEGER),
     AUCTION_TIME_FIELD(4, Forms.FormType.INTEGER),
     BUY_NOW_PRICE_FIELD(8, Forms.FormType.FLOAT),
+    START_PRICE_FIELD(6, Forms.FormType.FLOAT),
 
     COUNTRY_FIELD(9, Forms.FormType.INTEGER),
     DISTRICT_FIELD(10, Forms.FormType.INTEGER),

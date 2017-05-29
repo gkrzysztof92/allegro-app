@@ -5,20 +5,16 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
-import android.text.Selection;
 
 import com.gacek.krzysztof.allegroapp.data.DataContract;
 import com.gacek.krzysztof.allegroapp.data.DataContract.PhotosEntry;
 import com.gacek.krzysztof.allegroapp.model.Item;
 import com.gacek.krzysztof.allegroapp.model.ItemThumbnail;
-import com.gacek.krzysztof.allegroapp.model.Photo;
 import com.gacek.krzysztof.allegroapp.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gacek.krzysztof.allegroapp.data.DataContract.ItemsAttributeEntry.COLUMN_ITEM_ID;
-import static com.gacek.krzysztof.allegroapp.data.DataContract.ItemsAttributeEntry.CONTENT_URI;
 import static com.gacek.krzysztof.allegroapp.data.DataContract.ItemsEntry.*;
 
 

@@ -11,9 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.gacek.krzysztof.allegroapp.data.PreferencesManager;
@@ -29,6 +31,7 @@ import com.gacek.krzysztof.allegroapp.model.ItemAttribute;
 import com.gacek.krzysztof.allegroapp.model.Photo;
 import com.gacek.krzysztof.allegroapp.service.AllegroNewAuctionService;
 import com.gacek.krzysztof.allegroapp.service.AllegroServiceFactory;
+import com.gacek.krzysztof.allegroapp.util.AuctionTime;
 import com.gacek.krzysztof.allegroapp.util.SellFormCfg;
 import com.gacek.krzysztof.allegroapp.util.Utils;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
@@ -57,6 +60,7 @@ public class AddAuctionActivity extends AppCompatActivity {
     private TextView auctionTitleTextView;
     private TextView categoryTextView;
     private TextView quantityTextVew;
+    private TextView descriptionTextView;
     private RadioGroup auctionTypeRadioGroup;
     private RadioButton buyNowRadionButton;
     private RadioButton auctionRadionButton;
@@ -66,6 +70,7 @@ public class AddAuctionActivity extends AppCompatActivity {
     private EditText startPriceEditText;
     private TextInputLayout quantityInputLayout;
     private EditText quantityEditText;
+    private Spinner auctionTimeSpinner;
 
     private Subscription auctionTypesubscription;
 
@@ -93,6 +98,7 @@ public class AddAuctionActivity extends AppCompatActivity {
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.addAuction_layout);
         auctionTitleTextView = (TextView) findViewById(R.id.addAuction_title);
+        descriptionTextView = (TextView) findViewById(R.id.addAuction_description);
         categoryTextView = (TextView) findViewById(R.id.addAuction_category);
         quantityTextVew = (TextView) findViewById(R.id.addAuction_avaiableQty);
         auctionTypeRadioGroup = (RadioGroup) findViewById(R.id.addAuction_auctionType);
@@ -106,6 +112,12 @@ public class AddAuctionActivity extends AppCompatActivity {
         startPriceEditText = (EditText) findViewById(R.id.addAuction_startPrice);
         quantityInputLayout = (TextInputLayout) findViewById(R.id.addAuction_quantityLayout) ;
         quantityEditText = (EditText) findViewById(R.id.addAuction_quantity);
+        auctionTimeSpinner = (Spinner) findViewById(R.id.addAuction_auctionTime);
+
+        ArrayAdapter<String> auctionTimeAdapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, AuctionTime.getNamesList());
+        auctionTimeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        auctionTimeSpinner.setAdapter(auctionTimeAdapter);
 
         RxRadioGroup.checkedChanges(auctionTypeRadioGroup)
                 .subscribe(integer ->  {
@@ -140,6 +152,7 @@ public class AddAuctionActivity extends AppCompatActivity {
         if (itemId > 0) {
             item = itemsRepository.findOne(itemId);
             auctionTitleTextView.setText(item.getName());
+            descriptionTextView.setText(item.getDescription());
             categoryTextView.setText(item.getCategoryPath());
             photos = photosRepository.findByItemId(itemId);
             itemAttributes = itemsAttributeRepository.findByItemId(itemId);

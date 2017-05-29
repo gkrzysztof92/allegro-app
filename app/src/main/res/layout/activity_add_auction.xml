@@ -24,12 +24,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
+        android:baselineAligned="false"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:baselineAligned="false">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <!--Item Name-->
         <TextView
@@ -39,43 +39,68 @@
             android:text="Nazwa przedmiotu"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:textStyle="bold" />
+        <!--Item Description-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/addAuction_descriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opis:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/addAuction_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Opis Przedmiotu" />
+        </LinearLayout>
         <!--Item Category-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/addAuction_categoryLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kategoria:"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/addAuction_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Kategoria Przedmiotu"/>
+                android:text="Kategoria Przedmiotu" />
         </LinearLayout>
         <!--Avaiable Qty-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/addAuction_qtyLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dostepna ilosc: "
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/addAuction_avaiableQty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="5"/>
+                android:text="5" />
         </LinearLayout>
 
 
@@ -90,22 +115,24 @@
 
         <!--Auction Types-->
         <RadioGroup
+            android:id="@+id/addAuction_auctionType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/addAuction_auctionType"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <RadioButton
+                android:id="@+id/addAuction_buyNow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kup Teraz"
-                android:id="@+id/addAuction_buyNow"/>
+                android:text="Kup Teraz" />
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Licytacja"
                 android:id="@+id/addAuction_auction"
-                android:layout_marginLeft="20dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Licytacja" />
         </RadioGroup>
 
         <!-- Prices -->
@@ -113,12 +140,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/addAuction_buyNowPriceLayout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <EditText
                     android:id="@+id/addAuction_buyNowPrice"
                     android:layout_width="match_parent"
@@ -126,12 +155,14 @@
                     android:hint="Cena Kup Teraz"
                     android:inputType="numberDecimal" />
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/addAuction_startPriceLayout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <EditText
                     android:id="@+id/addAuction_startPrice"
                     android:layout_width="match_parent"
@@ -142,75 +173,71 @@
         </LinearLayout>
 
         <!--Quantity-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/addAuction_quantityLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <EditText
-                android:id="@+id/addAuction_quantity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ilosc"
-                android:inputType="number" />
-        </android.support.design.widget.TextInputLayout>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        </LinearLayout>
-
-
-
-
-       <!-- <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/addressData_buyNowPriceLayout"
+                android:id="@+id/addAuction_quantityLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="162dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/addressData_buyNowPrice"
+                    android:id="@+id/addAuction_quantity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Miasto"
-                    android:inputType="text" />
-
+                    android:hint="Ilosc"
+                    android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/addressData_minPriceLayout"
-                android:layout_width="164dp"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="322dp">
+
+            <TextView
+                android:id="@+id/addAuction_auctionTimeLabel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="162dp">
+                android:orientation="vertical"
+                android:text="Czas trwania"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                tools:layout_editor_absoluteX="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
 
-                <EditText
-                    android:id="@+id/addressData_minPrice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Miasto"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
+            <Spinner
+                android:id="@+id/addAuction_auctionTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
 
-        </android.support.constraint.ConstraintLayout>-->
-
-
-
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="0dp" />
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
-
 
 
 </android.support.design.widget.CoordinatorLayout>

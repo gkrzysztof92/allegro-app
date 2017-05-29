@@ -157,6 +157,7 @@ public class MyItemsFragment extends Fragment {
         itemsAttributeRepository.removeByItemId(selectedItemId);
         int position = removeItemFromItemList(selectedItemId);
         this.itemAdapter.notifyItemRemoved(position);
+        this.itemAdapter.notifyItemRangeChanged(position, itemList.size());
     }
 
     private void addAuction() {
@@ -170,11 +171,13 @@ public class MyItemsFragment extends Fragment {
         int position = -1;
         for(int i = 0; i < itemList.size(); i++) {
             if (itemId == itemList.get(i).getItemId()) {
-                return i;
+                position = i;
             }
         }
-        if (position >= 0) {
+        Log.d("ITEM", String.valueOf(position));
+        if (position != -1) {
             itemList.remove(position);
+            Log.d("ITEM", "Removed item");
         }
         return position;
     }

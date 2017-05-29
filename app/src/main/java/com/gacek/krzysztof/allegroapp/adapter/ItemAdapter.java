@@ -72,7 +72,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     }
 
 
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView itemNameTextView;
@@ -85,9 +84,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
             this.itemNameTextView = (TextView) itemView.findViewById(R.id.item_list_row_itemName);
             this.itemImageView = (ImageView) itemView.findViewById(R.id.item_list_row_itemImage);
 
-            itemView.setOnClickListener( l -> {
-                itemClickSubject.onNext(itemList.get(getAdapterPosition()).getItemId());
-            });
+            //itemView.setOnClickListener( l -> {
+            //    itemClickSubject.onNext(itemList.get(getAdapterPosition()).getItemId());
+            //});
 
             itemView.setOnLongClickListener( l -> {
                 ItemThumbnail item;
